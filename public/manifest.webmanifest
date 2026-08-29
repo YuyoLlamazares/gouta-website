@@ -1,0 +1,14 @@
+{
+  "name": "Twin",
+  "short_name": "Twin",
+  "description": "Your AI twin: captures, drafts, and proposes — you approve.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0b0f",
+  "theme_color": "#0b0b0f",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

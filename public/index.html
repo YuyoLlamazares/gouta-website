@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Twin">
+<meta name="theme-color" content="#0b0b0f">
+<meta name="color-scheme" content="dark light">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon.svg">
+<link rel="stylesheet" href="/styles.css">
+<title>Twin</title>
+</head>
+<body>
+
+<div id="login" class="gate">
+  <div class="gate-card">
+    <h1>Twin</h1>
+    <p>Enter your token to unlock.</p>
+    <form id="login-form">
+      <input id="token" type="password" placeholder="TWIN_TOKEN" autocomplete="current-password" required>
+      <button type="submit">Unlock</button>
+    </form>
+    <p id="login-error" class="error" hidden></p>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header>
+    <h1 id="view-title">Brief</h1>
+    <button id="refresh" class="icon-btn" aria-label="Refresh">↻</button>
+  </header>
+
+  <main>
+    <section id="view-brief" class="view">
+      <div class="composer">
+        <textarea id="capture-input" rows="2" placeholder="Capture anything…"></textarea>
+        <button id="capture-send">Capture</button>
+      </div>
+      <div id="capture-status" class="status" hidden></div>
+      <div id="brief-body" class="card prose"><p class="muted">Pull the brief to see what matters today.</p></div>
+      <button id="brief-load" class="wide">Generate today's brief</button>
+      <div id="stats" class="stats"></div>
+    </section>
+
+    <section id="view-queue" class="view" hidden>
+      <p class="hint">Nothing here has been sent. Approve to act, reject to discard.</p>
+      <div id="queue-list"></div>
+    </section>
+
+    <section id="view-tasks" class="view" hidden>
+      <div id="tasks-list"></div>
+    </section>
+
+    <section id="view-chat" class="view" hidden>
+      <div id="chat-log"></div>
+      <div class="composer sticky">
+        <textarea id="chat-input" rows="1" placeholder="Ask your twin…"></textarea>
+        <button id="chat-send">Send</button>
+      </div>
+    </section>
+
+    <section id="view-you" class="view" hidden>
+      <p class="hint">This is what your twin knows about you. The more honest it is, the less it sounds like a robot.</p>
+      <div id="profile-files"></div>
+      <h2>Memory</h2>
+      <div id="memory-list"></div>
+    </section>
+  </main>
+
+  <nav id="tabs">
+    <button data-view="brief" class="active"><span>◔</span>Brief</button>
+    <button data-view="queue"><span>✓</span>Queue<i id="badge" hidden></i></button>
+    <button data-view="tasks"><span>≡</span>Tasks</button>
+    <button data-view="chat"><span>◍</span>Chat</button>
+    <button data-view="you"><span>☺</span>You</button>
+  </nav>
+</div>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>
